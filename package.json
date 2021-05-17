@@ -1,0 +1,24 @@
+{
+  "name": "ojs-store",
+  "version": "1.0.0",
+  "description": "Module for managing data and live reloading app",
+  "main": "oStore.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OrangutanJS/ojs-store.git"
+  },
+  "keywords": [
+    "orangutanjs",
+    "ojs",
+    "store"
+  ],
+  "author": "Maciej Swiechowicz (mswiechowicz)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OrangutanJS/ojs-store/issues"
+  },
+  "homepage": "https://github.com/OrangutanJS/ojs-store#readme"
+}
