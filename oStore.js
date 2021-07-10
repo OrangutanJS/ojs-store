@@ -1,3 +1,5 @@
+import debounce from "./utils/debounce";
+
 const oStore = (store = {}, instance = () => {console.warn("oStore needs rerender function.")}) => {
     return new Proxy(store, handler(instance));
 }
@@ -28,24 +30,6 @@ const handler = function(instance) {
             return true;
         }
     }
-}
-
-var executed = false;
-
-function debounce(func, wait) {
-    let timeout;
-    const context = this;
-    const args = arguments;
-    const later = function () {
-        timeout = null;
-        setTimeout(()=>{executed = false}, 0);
-        if (!executed) {
-            executed = true;
-            func.apply(context, args);
-        }
-    };
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
 }
 
 export default oStore;
