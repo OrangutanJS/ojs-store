@@ -38,11 +38,10 @@ function debounce(func, wait) {
     const args = arguments;
     const later = function () {
         timeout = null;
-        let executeTimeout = setTimeout(()=>{executed = false}, 0);
+        setTimeout(()=>{executed = false}, 0);
         if (!executed) {
             executed = true;
             func.apply(context, args);
-            clearTimeout(executeTimeout);
         }
     };
     clearTimeout(timeout);
