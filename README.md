@@ -1,10 +1,10 @@
 # OrantuganJS - oStore
-###Simple way to manage your app state
+### Simple way to manage your app state
 
 ---
 recommended using with ojs-core - https://www.npmjs.com/package/ojs-core
 #### Quick start
-####VanillaJS
+#### VanillaJS
 ```js
 // function for oStore
 const counterValueChange = () => {
