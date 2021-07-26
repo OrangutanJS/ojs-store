@@ -8,7 +8,9 @@ const defaultConfig = {
 }
 
 const oStore = (store = {}, instanceOrFunction, config) => {
-    const rerender = instanceOrFunction.rerender ? instanceOrFunction.rerender : instanceOrFunction;
+    const rerender = instanceOrFunction.rerender
+        ? {fn: instanceOrFunction.rerender, instance: instanceOrFunction}
+        : {fn: instanceOrFunction, instance: null};
     return new Proxy(store, handler(rerender, {...defaultConfig, ...config}));
 }
 
@@ -56,8 +58,7 @@ const handler = function (rerender, config) {
 
 const rerenderOnSet = (rerender) => {
     const focusHandler = document.activeElement.id;
-    // instance?.rerender?.call(instance);
-    rerender();
+    rerender.fn.call(rerender.instance);
     document.getElementById(focusHandler)?.focus();
 }
 
