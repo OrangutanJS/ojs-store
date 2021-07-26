@@ -1,6 +1,6 @@
 {
   "name": "ojs-store",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Module for managing data and live reloading app",
   "main": "oStore.js",
   "scripts": {
