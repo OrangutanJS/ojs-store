@@ -4,6 +4,11 @@
 ---
 recommended using with ojs-core - https://www.npmjs.com/package/ojs-core
 #### Quick start
+```
+npm i ojs-store
+```
+Package on [npm](https://www.npmjs.com/package/ojs-store)
+
 #### VanillaJS
 ```js
 // function for oStore
