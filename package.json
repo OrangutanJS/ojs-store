@@ -5,7 +5,7 @@
   "main": "./dist/ojs-store.js",
   "exports": "./dist/ojs-store.js",
   "module": "./dist/ojs-store.js",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Module for managing data and live reloading app",
   "scripts": {
     "build": "microbundle",
