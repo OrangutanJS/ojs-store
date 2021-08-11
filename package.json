@@ -1,16 +1,10 @@
 {
   "name": "ojs-store",
-  "type": "module",
-  "source": "src/oStore.js",
-  "main": "./dist/oStore.js",
-  "exports": "./dist/oStore.js",
-  "module": "./dist/oStore.js",
-  "version": "1.2.8",
+  "main": "src/oStore.js",
+  "version": "1.2.10",
   "description": "Module for managing data and live reloading app",
   "scripts": {
-    "build": "microbundle",
-    "modern": "microbundle -f modern",
-    "module": "microbundle -f es"
+    "build": "none"
   },
   "repository": {
     "type": "git",
@@ -30,8 +24,5 @@
   "bugs": {
     "url": "https://github.com/OrangutanJS/ojs-store/issues"
   },
-  "homepage": "https://github.com/OrangutanJS/ojs-store#readme",
-  "devDependencies": {
-    "microbundle": "^0.13.3"
-  }
+  "homepage": "https://github.com/OrangutanJS/ojs-store#readme"
 }
