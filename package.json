@@ -2,13 +2,15 @@
   "name": "ojs-store",
   "type": "module",
   "source": "src/oStore.js",
-  "exports": "./dist/ojs-store.modern.js",
+  "main": "./dist/ojs-store.js",
+  "exports": "./dist/ojs-store.js",
   "module": "./dist/ojs-store.module.js",
   "version": "1.2.0",
   "description": "Module for managing data and live reloading app",
-  "main": "dist/ojs-store.js",
   "scripts": {
-    "build": "microbundle src/oStore.js"
+    "build": "microbundle",
+    "modern": "microbundle -f modern",
+    "module": "microbundle -f es"
   },
   "repository": {
     "type": "git",
@@ -20,7 +22,7 @@
     "store"
   ],
   "author": "Maciej Swiechowicz (mswiechowicz)",
-  "license": "ISC",
+  "license": "MIT",
   "files": [
     "dist"
   ],
