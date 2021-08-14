@@ -1,4 +1,4 @@
-# OrantuganJS - oStore
+# OrangutanJS - oStore
 ### Simple way to manage your app state
 
 ---
