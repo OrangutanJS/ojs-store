@@ -20,7 +20,7 @@ function debounceFn(fn, debounceTime) {
     }
 }
 
-const oStore = (store = {}, instanceOrFunction, config) => {
+const oStore = (store = {}, instanceOrFunction = {}, config) => {
     const rerender = instanceOrFunction.rerender
         ? {fn: instanceOrFunction.rerender, instance: instanceOrFunction}
         : {fn: instanceOrFunction, instance: null};
@@ -39,7 +39,7 @@ const handler = (rerender, config) => {
     return {
         deleteProperty: function (target, property) {
             delete target[property];
-            rerender();
+            rerenderOnSet(rerender)
             return true;
         },
         get: function (obj, prop) {
