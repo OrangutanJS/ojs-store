@@ -1,10 +1,23 @@
-import debounceFn from "./utils/debounce";
-
 const defaultConfig = {
     debounce: false,
     debounceTime: 1000,
     debounceFields: [],
     unobservedFields: []
+}
+
+function debounceFn(fn, debounceTime) {
+    let timeout = null;
+    return (...args) => {
+        if(timeout) clearTimeout(timeout);
+
+        timeout = setTimeout(
+            ()=> {
+                timeout = null;
+                fn(...args);
+            },
+            debounceTime
+        )
+    }
 }
 
 const oStore = (store = {}, instanceOrFunction, config) => {
@@ -14,7 +27,7 @@ const oStore = (store = {}, instanceOrFunction, config) => {
     return new Proxy(store, handler(rerender, {...defaultConfig, ...config}));
 }
 
-const handler = function (rerender, config) {
+const handler = (rerender, config) => {
     const {debounceTime, debounceFields, unobservedFields} = config;
     let {debounce} = config;
     if (debounceFields.length) debounce = true;
@@ -59,7 +72,8 @@ const handler = function (rerender, config) {
 const rerenderOnSet = (rerender) => {
     const focusHandler = document.activeElement.id;
     rerender.fn.call(rerender.instance);
-    document.getElementById(focusHandler)?.focus();
+    const focusedElement = document.getElementById(focusHandler);
+    focusedElement && focusedElement.focus();
 }
 
 export default oStore;
