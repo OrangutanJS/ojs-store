@@ -190,5 +190,3 @@ describe("Proxy events with user oStore config", () => {
         expect(rerender).not.toHaveBeenCalled();
     })
 })
-
-

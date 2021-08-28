@@ -20,10 +20,10 @@ function debounceFn(fn, debounceTime) {
     }
 }
 
-const oStore = (store = {}, instanceOrFunction = {}, config) => {
-    const rerender = instanceOrFunction.rerender
-        ? {fn: instanceOrFunction.rerender, instance: instanceOrFunction}
-        : {fn: instanceOrFunction, instance: null};
+const oStore = (store = {}, instanceOrFn = {}, config) => {
+    const rerender = instanceOrFn.rerender
+        ? {fn: instanceOrFn.rerender, instance: instanceOrFn}
+        : {fn: instanceOrFn, instance: null};
     return new Proxy(store, handler(rerender, {...defaultConfig, ...config}));
 }
 

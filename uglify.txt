@@ -1,1 +1,2 @@
 uglifyjs oStore.js -c -m toplevel,reserved=["oStore"] -o "../dist/oStore.js" --source-map "root=oStore.js,url=oStore.js.map"
+terser oStore.js -c -m toplevel,reserved=["oStore, store, instanceOrFn, config"] -o "../dist/oStore.js" --source-map "root=oStore.js,url=oStore.js.map"
