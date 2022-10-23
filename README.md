@@ -2,7 +2,6 @@
 ### Simple way to manage your app state
 
 ---
-recommended using with ojs-core - https://www.npmjs.com/package/ojs-core
 #### Quick start
 ```
 npm i ojs-store
